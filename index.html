@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="script.js" ></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+  <button hidden style="position: absolute" onclick="loadFarm()">Load</button>
+  <table id="farm" onmouseleave="if(!md) mo = -1">
+    <tr>
+      <td onclick="plotClick(0)" onmouseover=" if(!md) mo = 0"><img src="Sprites/Pumpkin.png"></td>
+      <td onclick="plotClick(1)" onmouseover=" if(!md) mo = 1">1</td>
+      <td onclick="plotClick(2)" onmouseover=" if(!md) mo = 2">2</td>
+    </tr>
+    <tr>
+      <td onclick="plotClick(3)" onmouseover=" if(!md) mo = 3">3</td>
+      <td onclick="plotClick(4)" onmouseover=" if(!md) mo = 4">4</td>
+      <td onclick="plotClick(5)" onmouseover=" if(!md) mo = 5">5</td>
+    </tr>
+    <tr>
+      <td onclick="plotClick(6)" onmouseover=" if(!md) mo = 6">6</td>
+      <td onclick="plotClick(7)" onmouseover=" if(!md) mo = 7">7</td>
+      <td onclick="plotClick(8)" onmouseover=" if(!md) mo = 8">8</td>
+    </tr>
+  </table>
+  <div onmouseenter="mo = 9"id="sellBox">
+
+  </div>
+</body>
+</html>
