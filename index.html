@@ -10,23 +10,23 @@
   <button hidden style="position: absolute" onclick="loadFarm()">Load</button>
   <table id="farm" onmouseleave="if(!md) mo = -1">
     <tr>
-      <td onclick="plotClick(0)" onmouseover=" if(!md) mo = 0"><img src="Sprites/Pumpkin.png"></td>
-      <td onclick="plotClick(1)" onmouseover=" if(!md) mo = 1">1</td>
-      <td onclick="plotClick(2)" onmouseover=" if(!md) mo = 2">2</td>
+      <td onclick="plotClick(0)" onmouseover=" if(!md) mo = 0"><img alt="1"></td>
+      <td onclick="plotClick(1)" onmouseover=" if(!md) mo = 1"><img alt="2"></td>
+      <td onclick="plotClick(2)" onmouseover=" if(!md) mo = 2"><img alt="3"></td>
     </tr>
     <tr>
-      <td onclick="plotClick(3)" onmouseover=" if(!md) mo = 3">3</td>
-      <td onclick="plotClick(4)" onmouseover=" if(!md) mo = 4">4</td>
-      <td onclick="plotClick(5)" onmouseover=" if(!md) mo = 5">5</td>
+      <td onclick="plotClick(3)" onmouseover=" if(!md) mo = 3"><img alt="4"></td>
+      <td onclick="plotClick(4)" onmouseover=" if(!md) mo = 4"><img alt="5"></td>
+      <td onclick="plotClick(5)" onmouseover=" if(!md) mo = 5"><img alt="6"></td>
     </tr>
     <tr>
-      <td onclick="plotClick(6)" onmouseover=" if(!md) mo = 6">6</td>
-      <td onclick="plotClick(7)" onmouseover=" if(!md) mo = 7">7</td>
-      <td onclick="plotClick(8)" onmouseover=" if(!md) mo = 8">8</td>
+      <td onclick="plotClick(6)" onmouseover=" if(!md) mo = 6"><img alt="6"></td>
+      <td onclick="plotClick(7)" onmouseover=" if(!md) mo = 7"><img alt="7"></td>
+      <td onclick="plotClick(8)" onmouseover=" if(!md) mo = 8"><img alt="8"></td>
     </tr>
   </table>
-  <div onmouseenter="mo = 9"id="sellBox">
-
+  <div onmouseenter="if(md) mo = 9"id="sellBox" onmouseleave>
+    <p id="moDisplay">Current mo: </p>
   </div>
 </body>
 </html>
