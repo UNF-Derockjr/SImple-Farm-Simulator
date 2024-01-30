@@ -18,6 +18,12 @@ function loadFarm(){
 function plotClick(id){
   console.log(id + "Plant Type: " + farm[id].plant + " | Water Level: " + farm[id].waterLevel);
 }
+function sell(){
+  console.log(farm[0].plant);
+    fetch("./prices.json")
+    .then((Response) => Response.json())
+    .then((json) => console.log(json.prices[0].farm[0].plant));
+}
 document.addEventListener("DOMContentLoaded", function(event) { 
   loadFarm();
 });
@@ -56,8 +62,10 @@ document.addEventListener("mouseup", function(event){
   md = false;
   alert(mo);
   holding2=false;
+  heldCrop.remove();
   if(mo == 9){
     alert("sold");
+    sell();
   }
   //Left position of helf item = document.getElementById("heldItem").style.left
   mo = -1;
@@ -74,3 +82,4 @@ farm[6].plant = "Watermelon";
 farm[7].plant = "Corn";
 farm[8].plant = "Cabbage";
 console.log(farm);
+sell();
