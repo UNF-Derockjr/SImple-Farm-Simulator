@@ -22,7 +22,8 @@ function sell(){
   console.log(farm[0].plant);
     fetch("./prices.json")
     .then((Response) => Response.json())
-    .then((json) => console.log(json.prices[0].farm[0].plant));
+    .then((json) => {console.log((JSON.stringify(json.prices[0])).farm[0].plant)
+    });
 }
 document.addEventListener("DOMContentLoaded", function(event) { 
   loadFarm();
