@@ -1,8 +1,11 @@
 body{
+}
+#top{
   display: flex;
+  width: 100%;
 }
 table{
-  width: 600px;
+  width: 50%;
   height: 600px;
   border: solid black; 
 }
@@ -17,8 +20,25 @@ td > img{
   transform: scale(3);
 }
 #sellBox{
-  margin-left: 20px;;
-  width: 300px;
+  margin-left: 20px;
+  width: 50%;
   height: 600px;
   border: solid black;
+}
+#store{
+  border: solid black;
+  padding: 5px;
+}
+.storeItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  text-align: center;
+  border: dashed black;
+}
+.storeItem > img{
+  padding-left: 20px;
+  padding-right: 20px;
+  transform: scale(1.2);
 }

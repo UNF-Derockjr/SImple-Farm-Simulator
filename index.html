@@ -7,26 +7,40 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-  <button hidden style="position: absolute" onclick="loadFarm()">Load</button>
-  <table id="farm" onmouseleave="if(!md) mo = -1">
-    <tr>
-      <td onclick="plotClick(0)" onmouseover=" if(!md) mo = 0"><img alt="1"></td>
-      <td onclick="plotClick(1)" onmouseover=" if(!md) mo = 1"><img alt="2"></td>
-      <td onclick="plotClick(2)" onmouseover=" if(!md) mo = 2"><img alt="3"></td>
-    </tr>
-    <tr>
-      <td onclick="plotClick(3)" onmouseover=" if(!md) mo = 3"><img alt="4"></td>
-      <td onclick="plotClick(4)" onmouseover=" if(!md) mo = 4"><img alt="5"></td>
-      <td onclick="plotClick(5)" onmouseover=" if(!md) mo = 5"><img alt="6"></td>
-    </tr>
-    <tr>
-      <td onclick="plotClick(6)" onmouseover=" if(!md) mo = 6"><img alt="6"></td>
-      <td onclick="plotClick(7)" onmouseover=" if(!md) mo = 7"><img alt="7"></td>
-      <td onclick="plotClick(8)" onmouseover=" if(!md) mo = 8"><img alt="8"></td>
-    </tr>
-  </table>
-  <div onmouseenter="if(md) mo = 9"id="sellBox" onmouseleave>
-    <p id="moDisplay">Current mo: </p>
+  <div id="top">
+    <button hidden style="position: absolute"   onclick="loadFarm()">Load</button>
+    <table id="farm" onmouseleave="if(!md) moc = -1">
+      <tr>
+        <td onclick="plotClick(0)" onmouseover=" if (!md) moc = 0"><img alt="1"></td>
+        <td onclick="plotClick(1)" onmouseover=" if (!md) moc = 1"><img alt="2"></td>
+        <td onclick="plotClick(2)" onmouseover=" if (!md) moc = 2"><img alt="3"></td>
+      </tr>
+      <tr>
+        <td onclick="plotClick(3)" onmouseover=" if (!md) moc = 3"><img alt="4"></td>
+        <td onclick="plotClick(4)" onmouseover=" if (!md) moc = 4"><img alt="5"></td>
+        <td onclick="plotClick(5)" onmouseover=" if (!md) moc = 5"><img alt="6"></td>
+      </tr>
+      <tr>
+        <td onclick="plotClick(6)" onmouseover=" if (!md) moc = 6"><img alt="6"></td>
+        <td onclick="plotClick(7)" onmouseover=" if (!md) moc = 7"><img alt="7"></td>
+        <td onclick="plotClick(8)" onmouseover=" if (!md) moc = 8"><img alt="8"></td>
+      </tr>
+    </table>
+    <div onmouseenter="if(md) mo = 9"id="sellBox"   onmouseleave>
+      <p id="moDisplay">Current mo: </p>
+      <p id="mocDisplay">Current moc: </p>
+      <ul id="soldItems">
+
+      </ul>
+    </div>
+  </div>
+  <div id="bottom">
+    <div id="store">
+      <div class="storeItem">
+        <img src="Sprites/Pumpkin.png">
+        <p>Price: 20</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>

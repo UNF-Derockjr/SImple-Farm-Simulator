@@ -8,6 +8,7 @@ let farm = [new plot, new plot, new plot, new plot, new plot, new plot, new plot
 let md = false;
 let mm = false;
 let mo = -1;
+let moc = 0;
 function loadFarm(){
   const myPlots = document.getElementsByTagName("td");
   for (var x = 0; x < myPlots.length; x++) {
@@ -19,10 +20,16 @@ function plotClick(id){
   console.log(id + "Plant Type: " + farm[id].plant + " | Water Level: " + farm[id].waterLevel);
 }
 function sell(){
-  console.log(farm[0].plant);
+  console.log(farm[moc].plant);
+  var priceSold = 0;
     fetch("./prices.json")
     .then((Response) => Response.json())
-    .then((json) => {console.log((JSON.stringify(json.prices[0])).farm[0].plant)
+    .then((json) => {
+      priceSold = json.prices[0][farm[moc].plant];
+      var x = document.createElement("p");
+      x.innerHTML = farm[moc].plant + ": " + priceSold;
+      document.getElementById('soldItems').appendChild(x);
+      moc = -1;
     });
 }
 document.addEventListener("DOMContentLoaded", function(event) { 
@@ -37,6 +44,7 @@ var holding2 = false;
 var heldCrop;
 document.addEventListener("mousemove", function(e){
   document.getElementById("moDisplay").innerHTML = "Current mo: " + mo;
+  document.getElementById("mocDisplay").innerHTML = "Current moc: " + moc;
   mm = true;
   if(md == true && mm == true){
     //console.log("Moving with mouse down!");
@@ -45,7 +53,7 @@ document.addEventListener("mousemove", function(e){
     if(!holding1){
       if(!holding2){
         heldCrop = document.createElement("img");
-        heldCrop.src = "sprites/" + farm[mo].plant + ".png";//"sprites/Pumpkin.png";//CHANGE
+        heldCrop.src = "sprites/" + farm[moc].plant + ".png";//"sprites/Pumpkin.png";//CHANGE
         document.getElementById('body').appendChild(heldCrop);
         heldCrop.style.pointerEvents = "none";
         heldCrop.style.position = "absolute";
@@ -61,11 +69,11 @@ document.addEventListener("mousemove", function(e){
 });
 document.addEventListener("mouseup", function(event){
   md = false;
-  alert(mo);
+  //alert(mo);
   holding2=false;
   heldCrop.remove();
   if(mo == 9){
-    alert("sold");
+    //alert("sold");
     sell();
   }
   //Left position of helf item = document.getElementById("heldItem").style.left
@@ -83,4 +91,3 @@ farm[6].plant = "Watermelon";
 farm[7].plant = "Corn";
 farm[8].plant = "Cabbage";
 console.log(farm);
-sell();

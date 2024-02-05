@@ -2,7 +2,14 @@
   "prices": [
     {
       "Pumpkin": 20,
-      "Potato": 10
+      "Potato": 10,
+      "Eggplant": 15,
+      "Carrot": 5,
+      "Watermelon": 20,
+      "Tomato": 10,
+      "Cabbage": 15,
+      "Corn": 10,
+      "Cauliflower": 15
     }
 
   ]
